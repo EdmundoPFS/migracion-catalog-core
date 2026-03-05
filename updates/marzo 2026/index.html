@@ -349,10 +349,20 @@
   .col-status { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 9px; font-weight: 700; letter-spacing: 0.03em; margin-bottom: 2px; text-transform: uppercase; white-space: nowrap; }
   .col-status-progress { background: rgba(255,149,0,0.15); color: #FF9500; border: 1px solid rgba(255,149,0,0.2); }
   .col-status-notstarted { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.08); }
+  .col-status-completed { background: rgba(52,199,89,0.15); color: #34C759; border: 1px solid rgba(52,199,89,0.2); }
 
   /* Fixed-layout tables for even column distribution */
   .table-fixed { table-layout: fixed; }
   .table-fixed th, .table-fixed td { overflow: hidden; text-overflow: ellipsis; }
+
+  /* Objective line under section title */
+  .section-objetivo {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 500;
+    color: var(--accent-blue);
+    margin-top: 4px; margin-bottom: 8px;
+    line-height: 1.4;
+  }
 </style>
 </head>
 <body>
@@ -661,7 +671,8 @@
         <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
           <div>
             <div class="section-title">Deprecar watchers de producto</div>
-            <div class="section-desc" style="margin-bottom:8px">✅ = watcher deprecado · objetivo: 100% en todas las marcas · Score pond. <span class="pill pill-red">3.1%</span></div>
+            <div class="section-objetivo">🎯 Eliminar los watchers de producto en todas las cadenas</div>
+            <div class="section-desc" style="margin-bottom:8px">✅ = watcher deprecado</div>
             <button class="comment-toggle" id="btn-deprecar" onclick="toggleComment('deprecar')"><span class="ct-arrow">▶</span> Contexto por componente</button>
             <div class="comment-body" id="cmt-deprecar">
               <div class="comment-inner" style="border-left-color: var(--accent-red);">
@@ -747,7 +758,8 @@
         <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
           <div>
             <div class="section-title">Eliminar dependencias con el watcher de producto</div>
-            <div class="section-desc" style="margin-bottom:8px">Trackea qué servicios han eliminado su integración · ✅ = integración eliminada · Score pond. <span class="pill pill-orange">22.5%</span></div>
+            <div class="section-objetivo">🎯 Eliminar la integración de los servicios dependientes del watcher de producto</div>
+            <div class="section-desc" style="margin-bottom:8px">Trackea qué servicios han eliminado su integración · ✅ = integración eliminada</div>
             <button class="comment-toggle" id="btn-dep-ctx" onclick="toggleComment('dep-ctx')"><span class="ct-arrow">▶</span> Contexto por componente</button>
             <div class="comment-body" id="cmt-dep-ctx">
               <div class="comment-inner" style="border-left-color: var(--accent-orange);">
@@ -806,7 +818,7 @@
             <td class="center"><span class="col-status col-status-progress">En progreso</span></td>
             <td class="center"><span class="col-status col-status-progress">En progreso</span></td>
             <td class="center"><span class="col-status col-status-notstarted">Not started</span></td>
-            <td class="center">—</td>
+            <td class="center"><span class="col-status col-status-completed">Completado</span></td>
             <td></td>
           </tr>
         </tfoot>
@@ -821,6 +833,7 @@
         <div class="section-accent" style="background: var(--accent-orange);"></div>
         <div>
           <div class="section-title">Administración de feeds</div>
+          <div class="section-objetivo">🎯 Generar y exportar todos los feeds desde IOP</div>
           <div class="section-desc" style="margin-bottom:8px">% de feeds migrados fuera de DB2 · objetivo: 100% en todas las marcas</div>
           <button class="comment-toggle" id="btn-feeds" onclick="toggleComment('feeds')"><span class="ct-arrow">▶</span> Contexto</button>
           <div class="comment-body" id="cmt-feeds">
@@ -864,6 +877,7 @@
         <div class="section-accent" style="background: var(--accent-red);"></div>
         <div>
           <div class="section-title">Administración de menú</div>
+          <div class="section-objetivo">🎯 Migrar el 100% de la administración del menú</div>
           <div class="section-desc" style="margin-bottom:8px">F1: jerarquía, visibilidad y atributos · F2: gestión completa de categoría · 1 = por IOP (objetivo)</div>
           <button class="comment-toggle" id="btn-menu" onclick="toggleComment('menu')"><span class="ct-arrow">▶</span> Contexto</button>
           <div class="comment-body" id="cmt-menu">
